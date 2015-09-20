@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/profile_picture"
-            android:layout_width="@dimen/pic_size"
-            android:layout_height="@dimen/pic_size"
+            android:layout_width="@dimen/dp_size"
+            android:layout_height="@dimen/dp_size"
             android:background="@color/dark_yellow"/>
         <!-- ADD PIC SOURCE-->
 

@@ -13,13 +13,13 @@ import com.parse.ParseACL;
 import com.parse.ParseUser;
 
 public class MainActivity extends Activity {
-    private static final int MENU_HOME = 0;
-    private static final int MENU_CREATE = 1;
-    private static final int MENU_MAP = 2;
-    private static final int MENU_PROFILE = 3;
-    private static final int MENU_SETTINGS = 4;
-
     private static final String TAG = "MAIN_ACTIVITY";
+
+    public static final int MENU_HOME = R.id.home;
+    public static final int MENU_CREATE = R.id.create;
+    public static final int MENU_MAP = R.id.map;
+    public static final int MENU_PROFILE = R.id.profile;
+    public static final int MENU_SETTINGS = R.id.settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 
         Fragment fragmentToGoTo = null;
 
-        //TODO: set fragmentToGoTo
+        //set fragmentToGoTo
         switch (id){
             case MENU_HOME:
                 fragmentToGoTo = new ListFragment();

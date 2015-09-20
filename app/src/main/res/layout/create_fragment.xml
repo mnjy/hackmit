@@ -17,9 +17,10 @@
             android:id="@+id/messageText"
             android:layout_width="match_parent"
             android:layout_height="@dimen/enter_text_height"
+            android:gravity="top|left"
             android:background="@color/white"
             android:padding="@dimen/margin_small"
-            android:textSize="@dimen/text_details"
+            android:textSize="@dimen/text_regular"
             tools:text="Enter new post message here" />
 
         <Button
@@ -32,6 +33,10 @@
             android:padding="@dimen/margin_small"
             android:text="Enter"
             android:textSize="@dimen/text_header" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_medium"/>
 
         <!-- Also post to Facebook, Twitter -->
         <TextView
@@ -46,28 +51,31 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ToggleButton
+            <ImageView
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="@dimen/logo_size"
+                android:src="@drawable/fb_icon"/>
+
+            <Switch
                 android:id="@+id/postToFbToggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/margin_small"
-                android:textSize="@dimen/text_header"
-                android:text="f"
-                android:background="@color/Background.CardView" />
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="@dimen/logo_size"
+                android:padding="@dimen/margin_small" />
 
             <View
-                android:layout_width="@dimen/margin_medium"
+                android:layout_width="@dimen/logo_size"
                 android:layout_height="match_parent" />
 
-            <ToggleButton
+            <ImageView
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="@dimen/logo_size"
+                android:src="@drawable/twitter_logo"/>
+
+            <Switch
                 android:id="@+id/postToTwitterToggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/margin_small"
-                android:textSize="@dimen/text_header"
-                android:text="t"
-                android:background="@color/Background.CardView"
-                android:checked="false" />
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="@dimen/logo_size"
+                android:padding="@dimen/margin_small" />
 
         </LinearLayout>
 
