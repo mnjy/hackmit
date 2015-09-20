@@ -23,7 +23,7 @@ public class ListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.list_fragment, container, false);
-        postsListView = (ListView) view.findViewById(R.id.postsList);
+        postsListView = (ListView) view.findViewById(R.id.posts);
         // Populate list
         postsListView.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.list_fragment, getPostsInArea()));
         return view;

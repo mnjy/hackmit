@@ -53,7 +53,7 @@
                 android:padding="@dimen/margin_small"
                 android:textSize="@dimen/text_header"
                 android:text="f"
-                android:background="@color/red" />
+                android:background="@color/Background.CardView" />
 
             <View
                 android:layout_width="@dimen/margin_medium"
@@ -66,7 +66,8 @@
                 android:padding="@dimen/margin_small"
                 android:textSize="@dimen/text_header"
                 android:text="t"
-                android:background="@color/red" />
+                android:background="@color/Background.CardView"
+                android:checked="false" />
 
         </LinearLayout>
 

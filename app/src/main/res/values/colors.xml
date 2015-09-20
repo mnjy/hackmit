@@ -9,14 +9,14 @@
     <color name="blue">#0000FF</color>
 
     <!-- Backgrounds -->
-    <color name="main_background">#b27fe6</color>
-    <color name="header_background">#ff33ff</color>
+    <color name="main_background">#00a2cc</color>
+    <color name="header_background">#ccf4ff</color>
 
-    <color name="ColorPrimary">#4caf50</color>
-    <color name="ColorPrimaryDark">#1b5e20</color>
+    <color name="ColorPrimary">#00a2cc</color>
+    <color name="ColorPrimaryDark">#005166</color>
     <color name="ColorAccent">#CCCCCC</color>
 
-    <color name="Background">#408D42</color>
+    <color name="Background">#002833</color>
 
     <color name="Background.CardView">#DDDDDD</color>
 

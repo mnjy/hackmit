@@ -2,17 +2,20 @@ package com.mnjy.hackmit;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends Activity {
-    public static final int MENU_HOME = 0;
-    public static final int MENU_CREATE = 1;
-    public static final int MENU_MAP = 2;
-    public static final int MENU_PROFILE = 3;
-    public static final int MENU_SETTINGS = 4;
+    private static final int MENU_HOME = 0;
+    private static final int MENU_CREATE = 1;
+    private static final int MENU_MAP = 2;
+    private static final int MENU_PROFILE = 3;
+    private static final int MENU_SETTINGS = 4;
+
+    private static final String TAG = "MAIN_ACTIVITY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +44,13 @@ public class MainActivity extends Activity {
         switch (id){
             case MENU_HOME:
                 fragmentToGoTo = new ListFragment();
+                break;
             case MENU_CREATE:
                 fragmentToGoTo = new CreateFragment();
+                break;
             case MENU_MAP:
                 startActivity(new Intent(this, MapsActivity.class));
+                break;
             case MENU_PROFILE:
                 break;
             case MENU_SETTINGS:
@@ -54,7 +60,9 @@ public class MainActivity extends Activity {
         }
 
         if (fragmentToGoTo != null) {
-            //TODO: fragment transaction
+            FragmentTransaction transaction = getFragmentManager().beginTransaction().replace(R.id.container, fragmentToGoTo);
+            transaction.addToBackStack(TAG);
+            transaction.commit();
         }
 
         return super.onOptionsItemSelected(item);
