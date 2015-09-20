@@ -1,8 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="AppTheme.Base"/>
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme"/>
+    <!--<style name="AppTheme" parent="AppTheme.Base"/>-->
+    <!--<style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">-->
         <!-- Customize your theme here. -->
 
         <!--&lt;!&ndash; colorPrimary is used for the default action bar background &ndash;&gt;-->
@@ -15,6 +16,6 @@
              <!--which is used to tint widgets &ndash;&gt;-->
         <!--<item name="colorAccent">@color/colorAccent</item>-->
 
-    </style>
+    <!--</style>-->
 
 </resources>
