@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.Parse;
+import com.parse.ParseACL;
+import com.parse.ParseUser;
+
 public class MainActivity extends Activity {
     private static final int MENU_HOME = 0;
     private static final int MENU_CREATE = 1;
@@ -66,5 +70,9 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void popBackStack(){
+        getFragmentManager().popBackStack();
     }
 }

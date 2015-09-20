@@ -8,7 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mnjy on 9/19/2015.
@@ -30,17 +36,25 @@ public class ListFragment extends Fragment {
     }
 
     private ArrayList<Post> getPostsInArea(){
-        //TODO!
-        return test();
-    }
-
-    private ArrayList<Post> test(){ //for testing purposes only
         ArrayList<Post> posts = new ArrayList<>();
-        posts.add(new Post());
-        posts.add(new Post());
-        posts.add(new Post());
-        posts.add(new Post());
-        posts.add(new Post());
+
+        ParseQuery query = new ParseQuery("Post");
+        query.include("location");
+        query.orderByDescending("score");
+        query.setLimit(20); //for now
+
+        try {
+            List<ParseObject> queries = query.find();
+
+            for (ParseObject obj : queries){
+                Post post = (Post) obj.get("post");
+                if (post != null){
+                    posts.add(post);
+                }
+            }
+
+        } catch (ParseException e) {
+        }
         return posts;
     }
 }

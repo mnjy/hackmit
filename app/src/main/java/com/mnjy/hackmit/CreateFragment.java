@@ -7,7 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
+import java.util.ArrayList;
 
 /**
  * Created by mnjy on 9/19/2015.
@@ -31,16 +38,36 @@ public class CreateFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String message = messageText.getText().toString();
-                if (message == null | message.length() == 0){
+                if (message == null | message.length() == 0) {
                     return;
                 }
-                Post post = new Post();
-                Bundle bundle = new Bundle();
-                bundle.putString(Post.MESSAGE, message);
-                post.setArguments(bundle);
-                // TODO: Put the post in some database --> update others
+                makeNewPost(message);
+                // Get out of here!
+
             }
         });
         return view;
+    }
+
+    public void makeNewPost(String message){
+        Post post = Post.createPost(message, "LOCATION TODO", ParseUser.getCurrentUser().toString()); //TODO: better def of user, TODO: SET LOCATION!
+        ParseObject p = post.getParseObject();
+
+        // Put the post in the database
+        p.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e == null) {
+                    Toast.makeText(getActivity(), "Post successful", Toast.LENGTH_SHORT).show();
+                    try {
+                        wait(1000);
+                    } catch (InterruptedException ie){ }
+                    ((MainActivity) getActivity()).popBackStack();
+
+                } else {
+                    Toast.makeText(getActivity(), "Post failed. Please check your connection and try again later.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }
