@@ -2,6 +2,7 @@ package com.mnjy.hackmit;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,7 +44,7 @@ public class MainActivity extends Activity {
             case MENU_CREATE:
                 fragmentToGoTo = new CreateFragment();
             case MENU_MAP:
-                break;
+                startActivity(new Intent(this, MapsActivity.class));
             case MENU_PROFILE:
                 break;
             case MENU_SETTINGS:
