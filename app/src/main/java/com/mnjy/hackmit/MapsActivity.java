@@ -41,6 +41,10 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
+        if (mMap != null) {
+            mMap.setMyLocationEnabled(true);
+        }
+        updatePlaces();
     }
 
     private void updatePlaces() {
