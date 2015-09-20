@@ -56,9 +56,9 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(this, MapsActivity.class));
                 break;
             case MENU_PROFILE:
-                break;
+                break; //less important
             case MENU_SETTINGS:
-                break;
+                break; //less important
             default:
                 break;
         }
