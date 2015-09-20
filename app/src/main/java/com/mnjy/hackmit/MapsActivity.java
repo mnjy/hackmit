@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.ParseObject;
 
 import java.util.List;
 
@@ -57,6 +58,10 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
         }
         double lat = lastLoc.getLatitude();
         double lng = lastLoc.getLongitude();
+        ParseObject person = new ParseObject("Person");
+        person.put("latitude",lat);
+        person.put("longtitude",lng);
+        person.saveInBackground();
         LatLng lastLatLng = new LatLng(lat, lng);
         userMarker = mMap.addMarker(new MarkerOptions().position(lastLatLng)
                 .position(lastLatLng)
@@ -88,15 +93,12 @@ public class MapsActivity extends FragmentActivity implements LocationListener{
         }
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
         StartLocators();
     }
-
-
 
     /**
      * Sets up the map if it is possible to do so (i.e., the Google Play services APK is correctly
