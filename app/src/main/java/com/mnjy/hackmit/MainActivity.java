@@ -8,10 +8,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.parse.Parse;
-import com.parse.ParseACL;
-import com.parse.ParseUser;
-
 public class MainActivity extends Activity {
     private static final String TAG = "MAIN_ACTIVITY";
 

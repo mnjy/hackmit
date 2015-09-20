@@ -1,5 +1,6 @@
 package com.mnjy.hackmit;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -8,7 +9,7 @@ import android.view.MenuItem;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
-public class AllGeofencesActivity extends ActionBarActivity {
+public class AllGeofencesActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_all_geofences, menu);
@@ -28,13 +29,13 @@ public class AllGeofencesActivity extends ActionBarActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_all_geofences);
 
-    setTitle(R.string.app_title);
-    if (savedInstanceState == null) {
-      getSupportFragmentManager().beginTransaction()
-              .add(R.id.container, new AllGeofencesFragment())
-              .commit();
-    }
-      GeofenceController.getInstance().init(this);
+//    setTitle(R.string.app_title);
+//    if (savedInstanceState == null) {
+//      getSupportFragmentManager().beginTransaction()
+//              .add(R.id.container, new AllGeofencesFragment())
+//              .commit();
+//    }
+//      GeofenceController.getInstance().init(this);
   }
 
   @Override
